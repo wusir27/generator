@@ -1,0 +1,11 @@
+#目录名,文件名前缀,配置文件名前缀,服务名前缀,调度启动类名,Java内存参数
+vm,vm,vm_schedule,VM,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m               #vm队列
+vm_batch,vm_batch,workflow_batch_vm_schedule,VM-BATCH,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m
+#vm_excep,vm_ee,ee_vm_schedule,VM-EE,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m
+#vm_emer,vm_emer,emergency_vm_schedule,VM-EMER,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m
+vm_esop,vm_esop,vm_esop_schedule,VM-ESOP,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m
+vm_group,vm_group,group_vm_schedule,VM-GROUP,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m
+vm_home,vm_home,home_vm_schedule,VM-HOME,order.bboss.StartHomeWorkflowSchedule,-Xms256m -Xmx512m
+vm_dbsms,vm_dbsms,dbsms_vm_schedule,VM-DBSMS,order.bboss.StartWorkflowSchedule,-Xms256m -Xmx512m
+vm_d2d,vm_d2d,vm_dtd_schedule,DTD-VM,bewa.StartBewaSchedule,-Xms256m -Xmx512m
+vm_confirm,vm_confirm,confirm_vm_schedule,VM-CONFIRM,order.bboss.StartConfirmWorkflowSchedule,-Xms256m -Xmx512m

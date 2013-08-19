@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configdata>
+  <datasource>base</datasource>
+  <defaultqueue>[queue_id]</defaultqueue>
+  <publish>false</publish>
+   <queue tasktype="[task_type_prefix]_[district]"  districtid="[district]" centerid="[center]" queueid="[queue_id]" threadnum="1" fetchnum="100" sleep="1"/>
+   <queue tasktype="[task_type_prefix]_[district]"  districtid="[district]" centerid="[center]" queueid="[queue_id]" threadnum="1" fetchnum="100" sleep="1"/>
+   <queue tasktype="[task_type_prefix]_[district]"  districtid="[district]" centerid="[center]" queueid="[queue_id]" threadnum="1" fetchnum="100" sleep="1"/>
+
+   <timer tasktype="[task_type_prefix]_TIMER_[district]"  districtid="[district]" centerid="[center]" queueid="[queue_id]" threadnum="1" fetchnum="100" sleep="10"/>
+</configdata>

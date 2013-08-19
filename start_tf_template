@@ -1,0 +1,53 @@
+#!/bin/ksh
+
+# 目的:设置通用环境变量
+
+# 警告:请不要随意修改
+# 作者:杨华
+# 邮件:yanghua@asiainfo.com
+# 创建时间:2008-09-25
+# 脚本目的:启动独立java进程
+# 修改原因:[修改请注明原因]
+# 修改时间:[修改请注明时间]
+# 修改作者:[修改请注明作者]
+
+# *************************************************************************
+# JAVA_OPTIONS - java启动选项
+# JAVA_VM      - jvm选项
+# MEM_ARGS     - 内存参数
+# *************************************************************************
+
+#判断进程是否重复启动
+monitor_tf_<file_name_prefix>_cen<center>_bd<host>_<district>.sh | read PROCESS_ALIVE_STATUS
+if [ "$PROCESS_ALIVE_STATUS" = "PROCESS_EXIST" ];
+then
+				echo "此进程已经启动了,不能重复启动"
+        exit 0;
+fi
+#判断进程是否重复启动结束
+
+BASE_APP_HOME="/home/aicrm"
+CURRENT_APP_HOME="/home/aicrm/app/other/<dir_name>"
+
+. "${BASE_APP_HOME}/sbin/setEnv.sh"
+
+CLASSPATH="${CURRENT_APP_HOME}/config:${BASE_APP_HOME}/configext:${CLASSPATH}"
+export CLASSPATH
+
+echo "CLASSPATH=${CLASSPATH}"
+
+MEM_ARGS="<mem_args>"
+
+echo "\n"
+echo "MEM_ARGS=${MEM_ARGS}"
+
+echo "\n"
+echo "JAVA_OPTIONS=${JAVA_OPTIONS}"
+
+
+#启动命令行
+${JAVA_HOME}/bin/java ${MEM_ARGS} -DVm.Config.File=<config_file_prefix>.module.cen<center>.bd<host>.<district> -Dappframe.server.name=TF-<server_name_prefix>-CEN<center>-BD<host>-<district> ${JAVA_OPTIONS} com.asiainfo.boss.so.<schedule_class_prefix> 2>&1 | ${BASE_APP_HOME}/sbin/cronolog -k 3  ${CURRENT_APP_HOME}/log/TF-<server_name_prefix>-CEN<center>-BD<host>-<district>-%Y%m%d.log &
+
+
+echo "\n"
+echo "启动完成,请查看日志"
