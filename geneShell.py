@@ -45,7 +45,7 @@ def readConfToArray(path,arrayLength):
 		s = line.strip('\n\r').split('#')[0].strip().split(',')
 		if len(s) == arrayLength:
 			ret.append(s)
-	fsr.close
+	fsr.close()
 	return ret
 
 def geneFile(name,templatePath,scheduleInfo,disInfo):
