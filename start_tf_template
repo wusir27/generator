@@ -27,7 +27,7 @@ fi
 #判断进程是否重复启动结束
 
 BASE_APP_HOME="/home/aicrm"
-CURRENT_APP_HOME="/home/aicrm/app/other/<dir_name>"
+CURRENT_APP_HOME="/home/aicrm/app/vm/<dir_name>"
 
 . "${BASE_APP_HOME}/sbin/setEnv.sh"
 
