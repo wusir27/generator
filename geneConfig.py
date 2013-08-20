@@ -31,7 +31,8 @@ def main():
 	for i in queueBusi:
 		for j in disInfo:
 			configString = configTemp.replace('[queue_id]',i[1]).replace('[task_type_prefix]',i[2]).replace('[district]',j[2]).replace('[center]',j[0])
-			fileName = 'newconfigext/'+i[0]+'.module.cen'+j[0]+'.bd'+j[1]+'.'+j[2]
+		#	fileName = 'newconfigext/'+i[0]+'.module.cen'+j[0]+'.bd'+j[1]+'.'+j[2]
+			fileName = 'newconfigext/'+i[0]+'.module.'+j[2]
 			f = file(fileName,'w')
 			f.write(configString)
 			f.close()

@@ -1,4 +1,4 @@
 #!/bin/ksh
 
 BASE_APP_HOME="/home/aicrm"
-$BASE_APP_HOME/sbin/monitor_process.sh <startup_class_name> TF-<server_name_prefix>-CEN<center>-BD<host>-<district> 
+$BASE_APP_HOME/sbin/monitor_process.sh <startup_class_name> TF-<server_name_prefix>-<district> 

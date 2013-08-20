@@ -1,17 +1,17 @@
 #!/bin/ksh
 
-# 作者:Auto generate
-# 创建时间:2007-09-06
-# 脚本目的:停止独立java进程
-# 修改原因:扩展
-# 修改时间:2008-09-25
-# 修改作者:
+# ����:Auto generate
+# ����ʱ��:2007-09-06
+# �ű�Ŀ��:ֹͣ����java����
+# �޸�ԭ��:��չ
+# �޸�ʱ��:2008-09-25
+# �޸�����:
 
 PROCESS_NAME="<startup_class_name>"
-PROCESS_PARM="TF-<server_name_prefix>-CEN<center>-BD<host>-<district>"
+PROCESS_PARM="TF-<server_name_prefix>-<district>"
 
 ps -ef|grep $PROCESS_NAME | grep $PROCESS_PARM | grep java | grep -v grep | awk '{print $2}' |while read pid
 do
         kill ${pid} 2>&1 >/dev/null
-        echo "进程名称:${PROCESS_NAME},参数:${PROCESS_PARM},PID:${pid} 成功停止"
+        echo "��������:${PROCESS_NAME},����:${PROCESS_PARM},PID:${pid} �ɹ�ֹͣ"
 done
