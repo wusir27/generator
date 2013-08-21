@@ -3,7 +3,7 @@ dbsms_vm_schedule,vm_dbsms,DBSMS_WORKFLOW
 #ee_vm_schedule,exception,APPFRAME_WORKFLOW_EE
 #emergency_vm_schedule,emergency1,APPFRAME_WORKFLOW_EMERGENCY
 group_vm_schedule,vm_group,GROUP_WORKFLOW
-home_vm_schedule,vm_confirm,HOME_WORKFLOW
+home_vm_schedule,vm_home,HOME_WORKFLOW
 vm_dtd_schedule,BEWA,BEWA
 vm_esop_schedule,vm_esop,ESOP_WORKFLOW
 vm_schedule,workflow,APPFRAME_WORKFLOW
