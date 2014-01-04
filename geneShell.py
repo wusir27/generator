@@ -18,7 +18,7 @@ def main():
 		if not os.path.exists('newShell/center'+di[0]):
 			os.mkdir('newShell/center'+di[0])
 		if not os.path.exists('newShell/center'+di[0]+'/host'+di[1]):
-			os.mkdir('newShell/center'+di[0]+'/host'+di[1])
+				os.mkdir('newShell/center'+di[0]+'/host'+di[1])
 		for dj in scheduleInfo:
 			if not os.path.exists('newShell/center'+di[0]+'/host'+di[1]+'/'+dj[0]):
 				os.mkdir('newShell/center'+di[0]+'/host'+di[1]+'/'+dj[0])	
@@ -45,7 +45,7 @@ def readConfToArray(path,arrayLength):
 		s = line.strip('\n\r').split('#')[0].strip().split(',')
 		if len(s) == arrayLength:
 			ret.append(s)
-	fsr.close
+	fsr.close()
 	return ret
 
 def geneFile(name,templatePath,scheduleInfo,disInfo):
@@ -68,7 +68,8 @@ def geneFile(name,templatePath,scheduleInfo,disInfo):
 			startupClass = startupClassSplit[len(startupClassSplit)-1] 
 			shell = shellString.replace('<file_name_prefix>',i[1]).replace('<center>',j[0]).replace('<host>',j[1]).replace('<dir_name>',i[0]).replace('<config_file_prefix>',i[2]).replace('<server_name_prefix>',i[3]).replace('<schedule_class_prefix>',i[4]).replace('<district>',j[2]).replace('<startup_class_name>',startupClass).replace('<mem_args>',i[5])
 			
-			shellFileName = 'newShell/center'+j[0]+'/host'+j[1]+'/'+i[0]+'/bin/'+name+'_tf_'+i[1]+'_cen'+j[0]+'_bd'+j[1]+'_'+j[2]+'.sh'
+			#shellFileName = 'newShell/center'+j[0]+'/host'+j[1]+'/'+i[0]+'/bin/'+name+'_tf_'+i[1]+'_cen'+j[0]+'_bd'+j[1]+'_'+j[2]+'.sh'
+			shellFileName = 'newShell/center'+j[0]+'/host'+j[1]+'/'+i[0]+'/bin/'+name+'_tf_'+i[1]+'_'+j[2]+'.sh'
 			fw = file(shellFileName,'w')
 			fw.write(shell)
 			fw.close()

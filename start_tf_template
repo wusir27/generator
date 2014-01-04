@@ -18,7 +18,7 @@
 # *************************************************************************
 
 #判断进程是否重复启动
-monitor_tf_<file_name_prefix>_cen<center>_bd<host>_<district>.sh | read PROCESS_ALIVE_STATUS
+monitor_tf_<file_name_prefix>_<district>.sh | read PROCESS_ALIVE_STATUS
 if [ "$PROCESS_ALIVE_STATUS" = "PROCESS_EXIST" ];
 then
 				echo "此进程已经启动了,不能重复启动"
@@ -27,7 +27,7 @@ fi
 #判断进程是否重复启动结束
 
 BASE_APP_HOME="/home/aicrm"
-CURRENT_APP_HOME="/home/aicrm/app/other/<dir_name>"
+CURRENT_APP_HOME="/home/aicrm/app/vm/<dir_name>"
 
 . "${BASE_APP_HOME}/sbin/setEnv.sh"
 
@@ -46,7 +46,7 @@ echo "JAVA_OPTIONS=${JAVA_OPTIONS}"
 
 
 #启动命令行
-${JAVA_HOME}/bin/java ${MEM_ARGS} -DVm.Config.File=<config_file_prefix>.module.cen<center>.bd<host>.<district> -Dappframe.server.name=TF-<server_name_prefix>-CEN<center>-BD<host>-<district> ${JAVA_OPTIONS} com.asiainfo.boss.so.<schedule_class_prefix> 2>&1 | ${BASE_APP_HOME}/sbin/cronolog -k 3  ${CURRENT_APP_HOME}/log/TF-<server_name_prefix>-CEN<center>-BD<host>-<district>-%Y%m%d.log &
+${JAVA_HOME}/bin/java ${MEM_ARGS} -DVm.Config.File=<config_file_prefix>.module.<district> -Dappframe.server.name=TF-<server_name_prefix>-<district> ${JAVA_OPTIONS} com.asiainfo.boss.so.<schedule_class_prefix> 2>&1 | ${BASE_APP_HOME}/sbin/cronolog -k 3  ${CURRENT_APP_HOME}/log/TF-<server_name_prefix>-<district>-%Y%m%d.log &
 
 
 echo "\n"
